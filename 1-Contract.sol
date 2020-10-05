@@ -27,7 +27,7 @@ contract ZombieFactory {
 
     /*Generacion de un numero aleatorio a partir de una cadena de texto.
     Los valores deben retornar sin 
-ser modificados; con lo que han de ser de tipo view  
+    ser modificados; con lo que han de ser de tipo view  
     Keccak256 mapea una cadena de caracateres a un número aleatorio hexgesimal*/ 
 
     function _generateRandomDna(string _str) private view  returns (uint) {
