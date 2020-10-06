@@ -30,7 +30,7 @@ contract FabricaProfesoresZombies {
     }
     /*Generacion de un numero aleatorio a partir de una cadena de texto.
      Los valores deben retornar sin modificación con lo que han de ser de tipo view
-     Keccak256 mapea una cadena de caracateres a un número aleatorio hexagesimal*/ 
+     Keccak256 mapea una cadena de caracteres a un número aleatorio hexagesimal*/ 
     
     function _generateRamdonDna(string _str) public view returns (uint) {
         uint rand = uint(keccak256(abi.encodePacked(_str)));
