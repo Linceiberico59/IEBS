@@ -4,7 +4,7 @@ contract FabricaProfesoresZombies {
 
     //Variables
 
-    event NewZombie(uint zombieid, string name, uint dna);////Creación del evento; Ver línea 29
+    event NewZombie(uint zombieid, string name, uint dna);//Creación del evento; Ver línea 29
     
     uint dnaDigits = 16;
     uint dnaModulus = 10 ** dnaDigits;
