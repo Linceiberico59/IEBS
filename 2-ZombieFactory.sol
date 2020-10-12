@@ -1,7 +1,7 @@
 pragma solidity ^0.4.25;
 
 contract ZombieFactory {
-
+.dol
     // Variables
     
     event NewZombie(uint zombieid, string name, uint dna);// Para la creación de un evento
