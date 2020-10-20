@@ -1,9 +1,10 @@
-
 pragma solidity ^0.4.25;
 
 contract FabricaProfesoresZombies {
 
     //Variables
+
+    event NewZombie(uint zombieid, string name, uint dna);//Creación del evento; Ver línea 29
     
     uint dnaDigits = 16;
     uint dnaModulus = 10 ** dnaDigits;
@@ -24,12 +25,12 @@ contract FabricaProfesoresZombies {
     Para el nuevo Zombie, debe de tener el mismo número de parametros que el struct; en este caso,3 */
 
     function  NewProfesorZombie(string _name, string _Materia, uint _dna) public {
-        ProfesoresZombies.push(Zombies(_name, _Materia, _dna));
-   
+        uint id = ProfesoresZombies.push(Zombies(_name, _Materia, _dna)) -1;
+        emit NewZombie(id, _name, _dna);
     }
     /*Generacion de un numero aleatorio a partir de una cadena de texto.
      Los valores deben retornar sin modificación con lo que han de ser de tipo view
-     Keccak256 mapea una cadena de caracateres a un número aleatorio hexagesimal*/ 
+     Keccak256 mapea una cadena de caracteres a un número aleatorio hexagesimal*/ 
     
     function _generateRamdonDna(string _str) public view returns (uint) {
         uint rand = uint(keccak256(abi.encodePacked(_str)));
