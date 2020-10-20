@@ -1,5 +1,5 @@
-const FabricaProfesoresZombies = artifacts.require("FabricaProfesoresZombies");
+const Migrations = artifacts.require("Migrations");
 
 module.exports = function(deployer) {
-  deployer.deploy(FabricaProfesoresZombies);
+  deployer.deploy(Migrations);
 };
