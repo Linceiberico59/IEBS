@@ -34,7 +34,7 @@ contract ZombieFactory is Ownable {
     //Utilizando el msg.sender
         zombieToOwner[id] = msg.sender;
         ownerZombieCount[msg.sender]++;
-        emit NewZombie(id, _name, _dna);
+        NewZombie(id, _name, _dna);
   
 
     }
@@ -44,7 +44,7 @@ contract ZombieFactory is Ownable {
     Keccak256 mapea una cadena de caracteres a un número aleatorio hexagesimal*/ 
 
     function _generateRandomDna(string _str) private view  returns (uint) {
-        uint rand = uint(keccak256(abi.encodePacked(_str)));
+        uint rand = uint(keccak256(_str));
         return rand % dnaModulus;
     }
     /*Funcion pública que tomará como parámetro el nombre del Zombi y usará el nombre para
