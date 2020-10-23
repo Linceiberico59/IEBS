@@ -1,4 +1,4 @@
-pragma solidity ^0.4.25;
+pragma solidity ^0.4.19;
 
 contract ZombieFactory {
 
@@ -33,7 +33,7 @@ contract ZombieFactory {
     //Utilizando el msg.sender
         zombieToOwner[id] = msg.sender;
         ownerZombieCount[msg.sender]++;
-        emit NewZombie(id, _name, _dna);
+        NewZombie(id, _name, _dna);
   
 
     }
@@ -44,7 +44,7 @@ contract ZombieFactory {
     Keccak256 mapea una cadena de caracateres a un número aleatorio hexgesimal*/ 
 
     function _generateRandomDna(string _str) private view  returns (uint) {
-        uint rand = uint(keccak256(abi.encodePacked(_str)));
+        uint rand = uint(keccak256(_str));
         return rand % dnaModulus;
     }
     /*Funcion pública que tomará como parámetro el nombre del Zombi y usará el nombre para
