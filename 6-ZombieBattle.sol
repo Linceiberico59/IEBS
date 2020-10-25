@@ -17,13 +17,13 @@ contract ZombieBattle is ZombieHelper {
         uint rand = randMod(100);
         if (rand <= attackVictoryProbability) {
             myZombie.winCount++;
-            myZombie.level++;
+            myZombie.level++:
             enemyZombie.lossCount++;
             feedAndMultiply(_zombieId, enemyZombie.dna, "zombie");
         } else {
             myZombie.lossCount++;
             enemyZombie.winCount++;
         }
-    _triggerCooldown(myZombie);
+    _triggerCooldown(myzombie);
     }
 }
